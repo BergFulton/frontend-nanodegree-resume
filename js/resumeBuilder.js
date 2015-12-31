@@ -29,11 +29,9 @@ var projects = {
 	"projects": [{
 		"title": "A Title",
 		"dates": 2015,
-		"description": "A description!"
+		"description": "A description!",
 		"images": []
-
 	}]
-
 }
 
 
