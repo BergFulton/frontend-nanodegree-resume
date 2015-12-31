@@ -62,5 +62,17 @@ work.employer = 'Carnegie Museum of Art';
 work.yearsWorked = '2014-present';
 work.city = 'Pittsburgh, PA';
 
-var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employer)
-$('#workExperience').append(formattedEmployer);
+var formattedPosition = HTMLworkTitle.replace("%data%", work.currentPosition);
+$("#workExperience").append(formattedPosition);
+//var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employer)
+//$('#workExperience').append(formattedEmployer);
+
+
+var education = {};
+education["name"] = 'University of Glasgow';
+education["degree"] = 'MLitt, with Merit';
+education["years"] = '2007-2008';
+education["city"] = 'Glasgow, Scotland';
+
+var educationCity = HTMLschoolLocation.replace("%data%", education["city"]);
+$("#education").append(educationCity);
