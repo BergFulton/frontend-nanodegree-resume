@@ -1,3 +1,12 @@
+var name = "Tracey Berg-Fulton";
+var formattedName = HTMLheaderName.replace("%data%", name);
+
+var role = "Creative Techologist";
+var formattedRole = HTMLheaderRole.replace("%data%", role);
+
+$("#header").prepend(formattedRole);
+$("#header").prepend(formattedName);
+
 
 var work = {
 	"jobs": [
@@ -24,6 +33,19 @@ var work = {
 	}
 ]
 }
+
+for (job in work.jobs){
+	$("#workExperience").append(HTMLworkStart);
+	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedLocation
+	+ formattedDates + formattedDescription;
+	$(".work-entry:last").append(formattedEmployerTitle);
+
+};
 
 var projects = {
 	"projects": [{
@@ -91,4 +113,19 @@ var education = {
 		"dates": "2015",
 		"url": "https://teamtreehouse.com/library/javascript-basics"
 	}]
+}
+
+if(bio.skills.length > 0) {
+	$("#header").append(HTMLskillsStart);
+
+	var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+	$("#skills").append(formattedSkill);
+	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+	$("#skills").append(formattedSkill);
 }
