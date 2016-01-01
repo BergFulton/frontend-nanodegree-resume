@@ -30,6 +30,13 @@ var work = {
 		"location": "Pittsburgh, PA",
 		"dates": "2012-July 2013",
 		"description": "Responsible for all collections activity, loans, exhibitions, and inventory."
+	},
+	{
+		"employer": "BergFulton, LLC",
+		"title": "Contract Registrar",
+		"location": "Greater Pittsburgh Area",
+		"dates": "2011-2012",
+		"description": "Collections management, arts management, and exhibition work for a variety of private clients and organizations."
 	}
 ]
 }
@@ -39,11 +46,15 @@ for (job in work.jobs){
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
+	$(".work-entry:last").append(formattedLocation);
+	var formattedEmployerTitle = formattedEmployer + formattedTitle;
+	$(".work-entry:last").append(formattedEmployerTitle)
 	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
+	$(".work-entry:last").append(formattedDates);
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
-	var formattedEmployerTitle = formattedEmployer + formattedTitle + formattedLocation
-	+ formattedDates + formattedDescription;
-	$(".work-entry:last").append(formattedEmployerTitle);
+	$(".work-entry:last").append(formattedDescription);
+;
+	
 
 };
 
