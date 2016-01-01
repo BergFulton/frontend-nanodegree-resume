@@ -41,7 +41,8 @@ var work = {
 ]
 }
 
-for (job in work.jobs){
+function displaywork() {
+	for (job in work.jobs) {
 	$("#workExperience").append(HTMLworkStart);
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
@@ -53,10 +54,17 @@ for (job in work.jobs){
 	$(".work-entry:last").append(formattedDates);
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
 	$(".work-entry:last").append(formattedDescription);
-;
-	
+}
+}
+displaywork();
 
-};
+$(document).click(function(loc){
+	var x = loc.pageX;
+	var y = loc.pageY;
+
+	logClicks(x, y);
+})
+
 
 var projects = {
 	"projects": [{
@@ -84,6 +92,9 @@ var bio ={
 	" cat herding"],
 	"bioPic": "images/headshot.jpg"
 };
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$('#header').prepend(formattedBioPic);
+
 
 
 

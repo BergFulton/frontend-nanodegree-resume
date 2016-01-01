@@ -8,8 +8,6 @@ var formattedEmployer = HTMLworkEmployer.replace("%data%", work.employer)
 $('#workExperience').append(formattedEmployer);
 
 
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$('#header').prepend(formattedBioPic);
 
 var formattedWelcome = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
 $('#header').append(formattedWelcome); 
