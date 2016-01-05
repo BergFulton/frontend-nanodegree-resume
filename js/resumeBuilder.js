@@ -37,6 +37,13 @@ var work = {
 		"location": "Greater Pittsburgh Area",
 		"dates": "2011-2012",
 		"description": "Collections management, arts management, and exhibition work for a variety of private clients and organizations."
+	},
+	{
+		"employer": "Fred Jones Jr. Art Museum, University of Oklahoma",
+		"title": "Assistant Registrar",
+		"location": "Norman, OK",
+		"dates": "2010-2011",
+		"description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
 	}
 ]
 }
@@ -75,17 +82,42 @@ var projects = {
 	}]
 }
 
+projects.display = function() {
+	for (project in projects.projects){
+		$("#projects").append(HTMLprojectStart);
+
+		var formattedTitle = HTMLprojectTitle.replace("%data%", 
+			projects.projects[project].title);
+		$(".project-entry:last").append(formattedTitle);
+
+		var formattedDates = HTMLprojectDates.replace("%data%",
+			projects.projects[project].dates);
+		$(".project-entry:last").append(formattedDates);
+
+		var formattedDescription = HTMLprojectDescription.replace("%data%",
+			projects.projects[project].description);
+		$(".project-entry:last").append(formattedDescription);
+
+		if (projects.projects[project].images.length > 0)
+			for (image in projects.projects[project].images)
+				var formattedImage = HTMLprojectImage.replace("%data%",
+					projects.projects[project].images[image]);
+			$(".project-entry:last").append(formattedImage);
+		}
+	}
+
+projects.display();
 
 var bio ={
 	"name" : 'Tracey Berg-Fulton',
 	"role" :'Lady who does stuff',
 	"welcomeMessage": "Cuppa tea and a chat?",
-	"contact" : {
-		"mobile": '412-443-2654',
-		"email":'traceybergfulton@gmail.com',
-		"github": 'BergFulton',
-		"twitter": '@BergFulton',
-		"location": 'Pittsburgh, PA'
+	"contacts" : {
+		"mobile": "412-443-2654",
+		"email":"traceybergfulton@gmail.com",
+		"github": "BergFulton",
+		"twitter": "@BergFulton",
+		"location": "Pittsburgh, PA"
 	},
 	"skills": [
 	"HTML ", " CSS", " JavaScript", " RWD", " project management", 
@@ -102,17 +134,17 @@ $('#header').prepend(formattedBioPic);
 var education = {
 	"schools": [{
 		"name": "University of Glasgow",
-		"city": "Glasgow, Scotland",
+		"location": "Glasgow, Scotland",
 		"degree": "MLitt, with Merit",
 		"major": "Decorative Arts and Design History",
-		"grad year": "2008"
+		"dates": "2008"
 
 	}, {
 		"name": "Otterbein College",
-		"city": "Westerville, Ohio",
+		"location": "Westerville, OH",
 		"degree": "BA, magna cum laude with honors",
 		"major": ["Art", "Journalism"],
-		"grad year": "2007"
+		"dates": "2007"
 	}],
 	"onlineCourses": [{
 		"title": "Front End Web Development NanoDegree",
@@ -137,6 +169,29 @@ var education = {
 	}]
 }
 
+function displayEducation() {
+	for (school in education.schools) {
+		$("#education").append(HTMLschoolStart);
+
+		var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
+		$(".education-entry:last").append(formattedName);
+		
+		var formattedLocation = HTMLschoolLocation.replace("%data%", education.schools[school].location);
+		$(".education-entry:last").append(formattedLocation);
+	
+		var formattedDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+		$(".education-entry:last").append(formattedDegree);
+		
+		var formattedDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+		$(".education-entry:last").append(formattedDates);
+		
+		var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+		$(".education-entry:last").append(formattedMajor);
+	};
+};
+
+displayEducation();
+
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
@@ -151,3 +206,19 @@ if(bio.skills.length > 0) {
 	formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
 	$("#skills").append(formattedSkill);
 }
+
+
+function inName(name) {
+	name = bio.name.trim().split(" ");
+	console.log(name);
+	name[1] = name[1].toUpperCase();
+	name[0] = name[0].slice(0, 1).toUpperCase() + 
+	 name[0].slice(1).toLowerCase();
+
+	 return name[0] + " "+name[1]; 
+}
+
+$("#main").append(internationalizeButton);
+
+//adding the Google map
+$("#mapDiv").append(googleMap);
