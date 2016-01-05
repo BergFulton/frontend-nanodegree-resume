@@ -7,6 +7,52 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
+var bio ={
+	"name" : 'Tracey Berg-Fulton',
+	"role" :'Lady who does stuff',
+	"welcomeMessage": "Cuppa tea and a chat?",
+	"contacts" : {
+		"mobile": "412-443-2654",
+		"email":"traceybergfulton@gmail.com",
+		"github": "BergFulton",
+		"twitter": "@BergFulton",
+		"location": "Pittsburgh, PA"
+	},
+	"skills": [
+	"HTML ", " CSS", " JavaScript", " RWD", " project management", 
+	" cat herding"],
+	"bioPic": "images/headshot.jpg"
+};
+
+$('#header').append(HTMLcontactGeneric); 
+
+var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$('#header').prepend(formattedBioPic);
+
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$('#topContacts').append(formattedWelcomeMessage);
+
+var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contact);
+$('#topContacts').append(formattedContact);
+
+var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$('#topContacts').append(formattedMobile);
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$('#topContacts').append(formattedEmail);
+
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$('#topContacts').append(formattedTwitter);
+
+var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+$('#topContacts').append(formattedGitHub);
+
+var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+$('#topContacts').append(formattedLocation);
+
+var formattedSkills = HTMLskills.replace("%data%", bio.skills);
+$('#topContacts').append(formattedSkills);
+
 
 var work = {
 	"jobs": [
@@ -108,27 +154,6 @@ projects.display = function() {
 
 projects.display();
 
-var bio ={
-	"name" : 'Tracey Berg-Fulton',
-	"role" :'Lady who does stuff',
-	"welcomeMessage": "Cuppa tea and a chat?",
-	"contacts" : {
-		"mobile": "412-443-2654",
-		"email":"traceybergfulton@gmail.com",
-		"github": "BergFulton",
-		"twitter": "@BergFulton",
-		"location": "Pittsburgh, PA"
-	},
-	"skills": [
-	"HTML ", " CSS", " JavaScript", " RWD", " project management", 
-	" cat herding"],
-	"bioPic": "images/headshot.jpg"
-};
-var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$('#header').prepend(formattedBioPic);
-
-
-
 
 
 var education = {
@@ -143,7 +168,7 @@ var education = {
 		"name": "Otterbein College",
 		"location": "Westerville, OH",
 		"degree": "BA, magna cum laude with honors",
-		"major": ["Art", "Journalism"],
+		"major": ["Art", " Journalism"],
 		"dates": "2007"
 	}],
 	"onlineCourses": [{
