@@ -215,8 +215,31 @@ function displayEducation() {
 		$(".education-entry:last").append(formattedMajor);
 	};
 };
-
 displayEducation();
+
+
+function displayOnlineEducation(){
+	for (course in education.onlineCourses) {
+		$("#education").append(HTMLonlineClasses);
+		
+		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
+		$(".education-entry:last").append(formattedTitle);
+
+		var formattedSchool = HTMLonlineSchool.replace("%data%", education.onlineCourses[course].school);
+		$(".education-entry:last").append(formattedSchool);
+
+		var formattedDates = HTMLonlineDates.replace("%data%", education.onlineCourses[course].dates);
+		$(".education-entry:last").append(formattedDates);
+
+		var formattedUrl = HTMLonlineURL.replace("%data%", education.onlineCourses[course].url);
+		$(".education-entry:last").append(formattedUrl);
+	}
+
+}
+
+displayOnlineEducation();
+
+
 
 if(bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
