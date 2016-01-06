@@ -7,7 +7,7 @@ var formattedRole = HTMLheaderRole.replace("%data%", role);
 $("#header").prepend(formattedRole);
 $("#header").prepend(formattedName);
 
-var bio ={
+var bio = {
 	"name" : 'Tracey Berg-Fulton',
 	"role" :'Lady who does stuff',
 	"welcomeMessage": "Cuppa tea and a chat?",
@@ -21,19 +21,15 @@ var bio ={
 	"skills": [
 	"HTML ", " CSS", " JavaScript", " RWD", " project management", 
 	" cat herding"],
-	"bioPic": "images/headshot.jpg"
+	"bioPic": "images/fry.jpg"
 };
 
-$('#header').append(HTMLcontactGeneric); 
+
+	
 
 var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-$('#header').prepend(formattedBioPic);
+$('#header').append(formattedBioPic);
 
-var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$('#topContacts').append(formattedWelcomeMessage);
-
-var formattedContact = HTMLcontactGeneric.replace("%data%", bio.contact);
-$('#topContacts').append(formattedContact);
 
 var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 $('#topContacts').append(formattedMobile);
@@ -50,8 +46,10 @@ $('#topContacts').append(formattedGitHub);
 var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
 $('#topContacts').append(formattedLocation);
 
-var formattedSkills = HTMLskills.replace("%data%", bio.skills);
-$('#topContacts').append(formattedSkills);
+var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$('#topContacts').append(formattedWelcomeMessage);
+
+
 
 
 var work = {
@@ -99,10 +97,13 @@ function displaywork() {
 	$("#workExperience").append(HTMLworkStart);
 	var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
 	var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
+
 	var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
 	$(".work-entry:last").append(formattedLocation);
+
 	var formattedEmployerTitle = formattedEmployer + formattedTitle;
-	$(".work-entry:last").append(formattedEmployerTitle)
+	$(".work-entry:last").append(formattedEmployerTitle);
+
 	var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
 	$(".work-entry:last").append(formattedDates);
 	var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
