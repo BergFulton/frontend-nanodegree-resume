@@ -255,6 +255,23 @@ if(bio.skills.length > 0) {
 }
 
 
+function displayFooterContacts(){
+ var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+$('#footerContacts').append(formattedMobile);
+
+var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+$('#footerContacts').append(formattedEmail);
+
+var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+$('#footerContacts').append(formattedTwitter);
+
+var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+$('#footerContacts').append(formattedGitHub);
+
+}
+
+displayFooterContacts();
+
 function inName(name) {
 	name = bio.name.trim().split(" ");
 	console.log(name);
