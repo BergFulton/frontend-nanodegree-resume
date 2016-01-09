@@ -218,9 +218,10 @@ function displayEducation() {
 displayEducation();
 
 
+
 function displayOnlineEducation(){
+	$("#education").prepend(HTMLonlineClasses);
 	for (course in education.onlineCourses) {
-		$("#education").append(HTMLonlineClasses);
 		
 		var formattedTitle = HTMLonlineTitle.replace("%data%", education.onlineCourses[course].title);
 		$(".education-entry:last").append(formattedTitle);
