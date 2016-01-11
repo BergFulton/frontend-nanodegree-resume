@@ -1,19 +1,20 @@
 var bio = {
-	"name" : 'Tracey Berg-Fulton',
-	"role" :'Lady who does stuff',
+	"name": "Tracey Berg-Fulton",
+	"role": "Lady who does stuff",
 	"welcomeMessage": "Cuppa tea and a chat?",
-	"contacts" : {
+	"contacts": {
 		"mobile": "412-443-2654",
-		"email":"traceybergfulton@gmail.com",
+		"email": "traceybergfulton@gmail.com",
 		"github": "BergFulton",
 		"twitter": "@BergFulton",
 		"location": "Pittsburgh, PA"
 	},
 	"skills": [
-	"HTML ", " CSS", " JavaScript", " RWD", " project management", 
-	" cat herding"],
+		"HTML ", " CSS", " JavaScript", " RWD", " project management",
+		" cat herding"
+	],
 	"bioPic": "images/fry.jpg"
-};
+}
 
 
 function displayBio(){
@@ -24,14 +25,14 @@ function displayBio(){
 	$("#header").append(formattedRole);
 
 	var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-	$('#header').append(formattedBioPic);
+	$("#header").append(formattedBioPic);
 	};
 
 displayBio();
 
 function displayContacts(){
 	var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-$('#topContacts').append(formattedWelcomeMessage);
+	$('#header').append(formattedWelcomeMessage);
 
 	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
 	$('#topContacts').append(formattedMobile);
