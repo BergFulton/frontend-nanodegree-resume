@@ -13,49 +13,44 @@ var bio = {
         "HTML ", " CSS", " JavaScript", " RWD", " project management",
         " cat herding"
     ],
-    "bioPic": "images/fry.jpg"
-    // "display": (),
+    "bioPic": "images/fry.jpg",
+    "display": function() {
+        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+        $('#header').prepend(formattedRole);
+        
+        var formattedName = HTMLheaderName.replace("%data%", bio.name);
+        $('#header').prepend(formattedName);
+
+        
+
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+        $('#header').append(formattedWelcomeMessage);
+
+        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+        $('#topContacts').append(formattedMobile);
+
+        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+        $('#topContacts').append(formattedEmail);
+
+        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+        $('#topContacts').append(formattedTwitter);
+
+        var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+        $('#topContacts').append(formattedGitHub);
+
+        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+        $('#topContacts').append(formattedLocation);
+
+        var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+        $("#header").append(formattedBioPic);
+    }
+,
 }
 
 
-function displayBio() {
-    var formattedName = HTMLheaderName.replace("%data%", bio.name);
-    $("#header").append(formattedName);
 
-    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-    $("#header").append(formattedRole);
 
-    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-    $("#header").append(formattedBioPic);
-};
-
-displayBio();
-
-function displayContacts() {
-    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-    $('#header').append(formattedWelcomeMessage);
-
-    var formattedGenericContact = HTMLcontactGeneric.replace("%data%", "Schnauzer");
-    $("#topContacts").append(HTMLcontactGeneric);
-
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $('#topContacts').append(formattedMobile);
-
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $('#topContacts').append(formattedEmail);
-
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    $('#topContacts').append(formattedTwitter);
-
-    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $('#topContacts').append(formattedGitHub);
-
-    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-    $('#topContacts').append(formattedLocation);
-
-};
-
-displayContacts();
+bio.display();
 
 
 
