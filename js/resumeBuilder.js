@@ -14,6 +14,7 @@ var bio = {
         " cat herding"
     ],
     "bioPic": "images/fry.jpg"
+    // "display": (),
 }
 
 
@@ -34,9 +35,11 @@ function displayContacts() {
     var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
     $('#header').append(formattedWelcomeMessage);
 
+    var formattedGenericContact = HTMLcontactGeneric.replace("%data%", "Schnauzer");
+    $("#topContacts").append(HTMLcontactGeneric);
+
     var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
     $('#topContacts').append(formattedMobile);
-
 
     var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
     $('#topContacts').append(formattedEmail);
@@ -87,7 +90,9 @@ var work = {
         "location": "Norman, OK",
         "dates": "2010-2011",
         "description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
-    }]
+    },
+    // "display":()
+    ]
 }
 
 function displaywork() {
@@ -190,7 +195,9 @@ var education = {
         "school": "TeamTreehouse",
         "dates": "2015",
         "url": "https://teamtreehouse.com/library/javascript-basics"
-    }]
+    },
+    // "display":(),
+    ]
 }
 
 function displayEducation() {
