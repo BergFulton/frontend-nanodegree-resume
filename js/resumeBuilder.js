@@ -10,18 +10,15 @@ var bio = {
         "location": "Pittsburgh, PA"
     },
     "skills": [
-        "HTML ", " CSS", " JavaScript", " RWD", " project management",
-        " cat herding"
+        "HTML ", "CSS", "JavaScript", "RWD", "project management","cat herding",
     ],
     "bioPic": "images/fry.jpg",
     "display": function() {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $('#header').prepend(formattedRole);
-        
+
         var formattedName = HTMLheaderName.replace("%data%", bio.name);
         $('#header').prepend(formattedName);
-
-        
 
         var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
         $('#header').append(formattedWelcomeMessage);
@@ -43,6 +40,23 @@ var bio = {
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         $("#header").append(formattedBioPic);
+
+        if (bio.skills.length > 0) {
+        $("#skills").append(HTMLskillsStart);
+
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+        $("#skills").append(formattedSkill);
+
+        console.log(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+        // $("#skills").append(formattedSkill);
+}
     }
 ,
 }
@@ -238,22 +252,6 @@ function displayOnlineEducation() {
 
 displayOnlineEducation();
 
-
-
-if (bio.skills.length > 0) {
-    $("#skills").append(HTMLskillsStart);
-
-    var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-    $("#skills").append(formattedSkill);
-    formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-    $("#skills").append(formattedSkill);
-}
 
 
 function displayFooterContacts() {
