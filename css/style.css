@@ -34,6 +34,7 @@ h1 {
   color: #1c4c54;
   line-height: 48px;
   display: inline;
+
 }
 
 h2 {
@@ -122,9 +123,17 @@ a {
   color: #1c4c54;
 }
 
+.major-em {
+  color: #1c4c54;
+}
+
 .white-text {
   font-weight: bold;
   color: #fff;
+  text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
+             0px 8px 13px rgba(0,0,0,0.1),
+             0px 18px 23px rgba(0,0,0,0.1);
+
 }
 
 .gray {
