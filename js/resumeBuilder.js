@@ -46,10 +46,11 @@ var bio = {
 bio.display();
 
 function printSkills(){
-for (var i = 0; i <= bio.skills.length; i += 1) {
-        $("#skills").append(HTMLskillsStart);
+    $("#header").append(HTMLskillsStart);
 
-        var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
+    for (var i = 0; i < bio.skills.length; i += 1) {
+
+        var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills").append(formattedSkill);
 
         // formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
@@ -60,8 +61,9 @@ for (var i = 0; i <= bio.skills.length; i += 1) {
         // $("#skills").append(formattedSkill);
         // formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
         // $("#skills").append(formattedSkill);
+    }
 }
-}
+
 printSkills();
 
 
