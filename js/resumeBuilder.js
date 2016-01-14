@@ -10,9 +10,9 @@ var bio = {
         "location": "Pittsburgh, PA"
     },
     "skills": [
-        "HTML ", "CSS", "JavaScript", "RWD", "project management","cat herding",
+        "HTML ", "CSS", "JavaScript", "digital strategy for cultural heritage", "project management","cat herding",
     ],
-    "bioPic": "images/fry.jpg",
+    "bioPic": "images/headshot_crop.jpg",
     "display": function() {
         var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
         $('#header').prepend(formattedRole);
@@ -40,31 +40,29 @@ var bio = {
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         $("#header").append(formattedBioPic);
+    }
+}
 
-        if (bio.skills.length > 0) {
+bio.display();
+
+function printSkills(){
+for (var i = 0; i <= bio.skills.length; i += 1) {
         $("#skills").append(HTMLskillsStart);
 
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[0]);
         $("#skills").append(formattedSkill);
 
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-        $("#skills").append(formattedSkill);
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-        $("#skills").append(formattedSkill);
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-        $("#skills").append(formattedSkill);
-        formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-        $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
+        // $("#skills").append(formattedSkill);
+        // formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
+        // $("#skills").append(formattedSkill);
 }
-    }
-,
 }
-
-
-
-
-bio.display();
-
+printSkills();
 
 
 var work = {
