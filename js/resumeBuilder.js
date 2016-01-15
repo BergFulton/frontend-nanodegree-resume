@@ -52,15 +52,6 @@ function printSkills(){
 
         var formattedSkill = HTMLskills.replace("%data%", bio.skills[i]);
         $("#skills").append(formattedSkill);
-
-        // formattedSkill = HTMLskills.replace("%data%", bio.skills[1]);
-        // $("#skills").append(formattedSkill);
-        // formattedSkill = HTMLskills.replace("%data%", bio.skills[2]);
-        // $("#skills").append(formattedSkill);
-        // formattedSkill = HTMLskills.replace("%data%", bio.skills[3]);
-        // $("#skills").append(formattedSkill);
-        // formattedSkill = HTMLskills.replace("%data%", bio.skills[4]);
-        // $("#skills").append(formattedSkill);
     }
 }
 
@@ -98,15 +89,12 @@ var work = {
         "location": "Norman, OK",
         "dates": "2010-2011",
         "description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
-    },
-    // "display":()
-    ]
-}
-
-function displaywork() {
-    for (job in work.jobs) {
+    }],
+    "display": function () {
+        for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
+       
         var formattedTitle = HTMLworkTitle.replace("%data%", work.jobs[job].title);
 
         var formattedLocation = HTMLworkLocation.replace("%data%", work.jobs[job].location);
@@ -117,11 +105,15 @@ function displaywork() {
 
         var formattedDates = HTMLworkDates.replace("%data%", work.jobs[job].dates);
         $(".work-entry:last").append(formattedDates);
+       
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
     }
+    }
 }
-displaywork();
+
+work.display();
+
 
 $(document).click(function(loc) {
     var x = loc.pageX;
@@ -133,11 +125,21 @@ $(document).click(function(loc) {
 
 var projects = {
     "projects": [{
-        "title": "A Title",
-        "dates": 2015,
-        "description": "A description!",
-        "images": []
-    }]
+        "title": "#MuseumSwearJar",
+        "dates": "2015-present",
+        "description":"<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overloard for change.",
+        "images": ["images/SwearJar.jpg"]
+    }, {
+        "title": "Pittsburgh Punk Archive",
+        "dates": "2015-present",
+        "description": "Building a community driven online archive of the Pittsburgh punk scene.",
+        "images": ["images/BetterOffDead_MonacaVFW.jpg"]
+    }, {
+        "title": "1000 Mile Challenge",
+        "dates": "2016",
+        "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016.",
+        "images": ["images/Running.jpg"]
+    }],
 }
 
 projects.display = function() {
