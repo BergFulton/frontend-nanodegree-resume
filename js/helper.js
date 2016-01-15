@@ -140,6 +140,10 @@ function initializeMap() {
       locations.push(work.jobs[job].location);
     }
 
+    for (var conf in speaking.conf) {
+      locations.push(speaking.conf[conf].location);
+    }
+
     return locations;
   }
 

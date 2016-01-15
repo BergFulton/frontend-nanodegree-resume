@@ -166,6 +166,24 @@ var projects = {
 }
 projects.display();
 
+var speaking = {
+    "conf": [{
+        "name":"ARCS Conf",
+        "dates": "November 12-15, 2015",
+        "topic": "Be Excellent to Each Other",
+        "gist": "Sharing and liberating museum data makes all museum data better.",
+        "location": "New Orleans, LA"
+    }, {
+        "name": "Museum Computer Network",
+        "dates": "November 4-8",
+        "topic": "Be Excellent to Each Other; The Future of Provenance Research",
+        "gist": "How can we connect people and information to help museums do better and more excellent provenance.",
+        "location": "Minneapolis, MN"
+    }],
+    "display": function() {
+        $("#speaking").append();
+    }
+};
 
 
 var education = {
@@ -203,13 +221,9 @@ var education = {
         "school": "TeamTreehouse",
         "dates": "2015",
         "url": "https://teamtreehouse.com/library/javascript-basics"
-    },
-    // "display":(),
-    ]
-}
-
-function displayEducation() {
-    for (school in education.schools) {
+    }],
+    "display": function(){
+        for (school in education.schools) {
         $("#education").append(HTMLschoolStart);
 
         var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -225,9 +239,14 @@ function displayEducation() {
 
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedMajor);
-    };
-};
-displayEducation();
+
+
+        }
+    }
+}
+
+education.display();
+
 
 
 
