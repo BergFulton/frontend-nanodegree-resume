@@ -140,10 +140,8 @@ var projects = {
         "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016.",
         "images": ["images/Running.jpg"]
     }],
-}
-
-projects.display = function() {
-    for (project in projects.projects) {
+    "display": function() {
+        for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace("%data%",
@@ -163,9 +161,9 @@ projects.display = function() {
                 var formattedImage = HTMLprojectImage.replace("%data%",
                     projects.projects[project].images[image]);
         $(".project-entry:last").append(formattedImage);
+        }
     }
 }
-
 projects.display();
 
 
