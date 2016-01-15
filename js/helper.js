@@ -142,8 +142,10 @@ function initializeMap() {
 
     for (var conf in speaking.conf) {
       locations.push(speaking.conf[conf].location);
+      // console.log("in locations loop: ", locations);
     }
 
+    console.log(locations);
     return locations;
   }
 
@@ -215,6 +217,8 @@ function initializeMap() {
       var request = {
         query: locations[place]
       };
+
+      console.log(request);
 
       // Actually searches the Google Maps API for location data and runs the callback
       // function with the search results after each search.

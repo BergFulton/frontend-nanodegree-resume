@@ -133,7 +133,7 @@ var projects = {
         "title": "Pittsburgh Punk Archive",
         "dates": "2015-present",
         "description": "Building a community driven online archive of the Pittsburgh punk scene.",
-        "images": ["images/BetterOffDead_MonacaVFW.jpg"]
+        "images": ["images/BetterOffDead_MonacaVFW.jpg", "images/PeachPitt_basement.jpg"]
     }, {
         "title": "1000 Mile Challenge",
         "dates": "2016",
@@ -179,6 +179,12 @@ var speaking = {
         "topic": "Be Excellent to Each Other; The Future of Provenance Research",
         "gist": "How can we connect people and information to help museums do better and more excellent provenance.",
         "location": "Minneapolis, MN"
+    }, {
+        "name": "European Registrars Conference 2014",
+        "dates": "June 8-10, 2014",
+        "topic": "Registrars of the Future",
+        "gist": "What are the ways registrars and the registrarial profession will change in the future?",
+        "location": "Helsinki, Finland"
     }],
     "display": function() {
         $("#speaking").append();
