@@ -171,25 +171,55 @@ var speaking = {
         "name":"ARCS Conf",
         "dates": "November 12-15, 2015",
         "topic": "Be Excellent to Each Other",
-        "gist": "Sharing and liberating museum data makes all museum data better.",
         "location": "New Orleans, LA"
+        // "slides":""
     }, {
         "name": "Museum Computer Network",
-        "dates": "November 4-8",
+        "dates": "November 4-8, 2015",
         "topic": "Be Excellent to Each Other; The Future of Provenance Research",
-        "gist": "How can we connect people and information to help museums do better and more excellent provenance.",
         "location": "Minneapolis, MN"
+        // "slides":""
     }, {
-        "name": "European Registrars Conference 2014",
+        "name": "Keystone DH",
+        "dates": "June 4-6, 2015",
+        "topic": "Art Tracks:Visualizing the Lives of Artwork",
+        "location": "University of Pennsylvania, Philadelphia, PA",
+        // "slides": ""
+    }, {
+        "name": "European Registrars Conference",
         "dates": "June 8-10, 2014",
         "topic": "Registrars of the Future",
-        "gist": "What are the ways registrars and the registrarial profession will change in the future?",
         "location": "Helsinki, Finland"
+        // "slides":""
+    }, {
+        "name": "European Registrars Conference",
+        "dates": "December 2012",
+        "topic": "The World Needs to See This!; Registrars and Social Media",
+        "location": "Edinburgh, Scotland",
+        // "slides": ""
     }],
     "display": function() {
-        $("#speaking").append();
+        for (conf in speaking.conf) {
+        $("#speaking").append(HTMLspeakingStart);
+        
+        var formattedName = HTMLspeakingName.replace("%data%", speaking.conf[conf].name);
+        $(".speaking-entry:last").append(formattedName);
+
+        var formattedLocation = HTMLspeakingLocation.replace("%data%", speaking.conf[conf].location);
+        $(".speaking-entry:last").append(formattedLocation);
+
+
+        var formattedDates = HTMLspeakingDates.replace("%data%", speaking.conf[conf].dates);
+        $(".speaking-entry:last").append(formattedDates);
+
+               
+        var formattedTopic = HTMLspeakingTopic.replace("%data%", speaking.conf[conf].topic);
+        $(".speaking-entry:last").append(formattedTopic);
+
+       }
     }
 };
+speaking.display();
 
 
 var education = {

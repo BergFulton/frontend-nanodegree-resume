@@ -55,6 +55,13 @@ var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
 var HTMLonlineURL = '<br><a class="dark-link" href="#">%data%</a>';
 
+var HTMLspeakingStart = '<div class="speaking-entry"></div>';
+var HTMLspeakingName = '<a href="#">%data%';
+var HTMLspeakingTopic = '<p><br>%data%</p>';
+var HTMLspeakingDates = '<div class="date-text">%data%</div>';
+var HTMLspeakingLocation = '<div class="location-text">%data%</div>';
+var HTMLspeakingURL = '<br><a class="dark-link" href="#">%data%</a>';
+
 var internationalizeButton = '<button>Internationalize</button>';
 var googleMap = '<div id="map"></div>';
 

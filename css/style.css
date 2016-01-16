@@ -25,7 +25,8 @@ p {
 
 .education-entry,
 .work-entry,
-.project-entry {
+.project-entry,
+.speaking-entry {
   padding: 0 5%;
 }
 
