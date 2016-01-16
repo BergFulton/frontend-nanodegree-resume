@@ -212,7 +212,7 @@ var speaking = {
         var formattedDates = HTMLspeakingDates.replace("%data%", speaking.conf[conf].dates);
         $(".speaking-entry:last").append(formattedDates);
 
-               
+
         var formattedTopic = HTMLspeakingTopic.replace("%data%", speaking.conf[conf].topic);
         $(".speaking-entry:last").append(formattedTopic);
 

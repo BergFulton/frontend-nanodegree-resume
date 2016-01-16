@@ -6,7 +6,8 @@ h5,
 h6 {
   padding:0;
   margin:0;
-  font-family: 'Raleway', sans-serif;
+  font-family: 'Vast Shadow', cursive;
+  text-transform: uppercase;
 }
 
 body,
@@ -16,7 +17,7 @@ li,
 p {
   padding: 0;
   margin: 0;
-  font-family: 'Merriweather', serif;
+  font-family: 'Playfair Display', serif;
 }
 
 .clear-fix {
@@ -99,6 +100,7 @@ a {
   display: block;
 }
 
+
 .dark-link {
   color: #1c4c54;
 
@@ -128,8 +130,8 @@ a {
 }
 
 .white-text {
-  font-weight: bold;
-  color: #fff;
+/*  font-weight: bold;
+*/  color: #fff;
   text-shadow: 0px 4px 3px rgba(0,0,0,0.4),
              0px 8px 13px rgba(0,0,0,0.1),
              0px 18px 23px rgba(0,0,0,0.1);
