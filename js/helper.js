@@ -144,8 +144,12 @@ function initializeMap() {
     // iterates through work locations and appends each location to
     // the locations array
     for (var job in work.jobs) {
-      locations.push(work.jobs[job].location);
-    }
+  var location = work.jobs[job].location;
+  // if location not found in locations array, push
+  if (locations.indexOf(location) === -1 ) {
+    locations.push(location);
+ }
+}
 
     for (var conf in speaking.conf) {
       locations.push(speaking.conf[conf].location);

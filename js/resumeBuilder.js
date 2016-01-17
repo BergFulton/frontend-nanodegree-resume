@@ -25,23 +25,31 @@ var bio = {
 
         var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
         $('#topContacts').append(formattedMobile);
+        $('#footerContacts').append(formattedMobile);
 
         var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
         $('#topContacts').append(formattedEmail);
+        $('#footerContacts').append(formattedEmail);
 
         var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
         $('#topContacts').append(formattedTwitter);
+        $('#footerContacts').append(formattedTwitter);
+
 
         var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
         $('#topContacts').append(formattedGitHub);
+        $('#footerContacts').append(formattedGitHub);
+
 
         var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
         $('#topContacts').append(formattedLocation);
 
         var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
         $("#header").append(formattedBioPic);
+    
+        }
     }
-}
+
 
 bio.display();
 
@@ -307,23 +315,6 @@ function displayOnlineEducation() {
 displayOnlineEducation();
 
 
-
-function displayFooterContacts() {
-    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-    $('#footerContacts').append(formattedMobile);
-
-    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-    $('#footerContacts').append(formattedEmail);
-
-    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-    $('#footerContacts').append(formattedTwitter);
-
-    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-    $('#footerContacts').append(formattedGitHub);
-
-}
-
-displayFooterContacts();
 
 function inName(name) {
     name = bio.name.trim().split(" ");
