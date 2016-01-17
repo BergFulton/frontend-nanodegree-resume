@@ -50,7 +50,6 @@ var bio = {
         }
     }
 
-
 bio.display();
 
 function printSkills(){
@@ -176,35 +175,30 @@ projects.display();
 
 var speaking = {
     "conf": [{
-        "name":"ARCS Conf",
+        "name": "ARCS Conf",
         "dates": "November 12-15, 2015",
         "topic": "Be Excellent to Each Other",
         "location": "New Orleans, LA"
-        // "slides":""
     }, {
         "name": "Museum Computer Network",
         "dates": "November 4-8, 2015",
         "topic": "Be Excellent to Each Other; The Future of Provenance Research",
         "location": "Minneapolis, MN"
-        // "slides":""
     }, {
         "name": "Keystone DH",
         "dates": "June 4-6, 2015",
         "topic": "Art Tracks:Visualizing the Lives of Artwork",
-        "location": "University of Pennsylvania, Philadelphia, PA",
-        // "slides": ""
+        "location": "University of Pennsylvania, Philadelphia, PA"
     }, {
         "name": "European Registrars Conference",
         "dates": "June 8-10, 2014",
         "topic": "Registrars of the Future",
         "location": "Helsinki, Finland"
-        // "slides":""
     }, {
         "name": "European Registrars Conference",
         "dates": "December 2012",
         "topic": "The World Needs to See This!; Registrars and Social Media",
-        "location": "Edinburgh, Scotland",
-        // "slides": ""
+        "location": "Edinburgh, Scotland"
     }],
     "display": function() {
         for (conf in speaking.conf) {
