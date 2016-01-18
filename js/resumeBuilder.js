@@ -10,11 +10,11 @@ var bio = {
         "location": "Pittsburgh, PA"
     },
     "skills": [
+        "Social Media",
         "HTML",
         "CSS",
         "JavaScript",
-        "digital strategy for cultural heritage",
-        "project management",
+        "digital strategy",
         "cat herding"
     ],
     "bioPic": "images/headshot_crop.jpg"
@@ -90,7 +90,7 @@ var work = {
     }, {
         "employer": "BergFulton, LLC",
         "title": "Contract Registrar",
-        "location": "Greater Pittsburgh Area",
+        "location": "Pittsburgh, PA",
         "dates": "2011-2012",
         "description": "Collections management, arts management, and exhibition work for a variety of private clients and organizations."
     }, {

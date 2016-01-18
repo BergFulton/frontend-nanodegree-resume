@@ -48,7 +48,6 @@ h2 {
 }
 
 h3 {
-  font-style: italic;
   font-size: 20px;
   color: #1c4c54;
   line-height: 22px;
@@ -87,6 +86,11 @@ h5 {
 
 }
 
+.highlight-text {
+  font-style: italic;
+  font-size: 20px;
+}
+
 p {
   font-size: 14px;
   color: #1c4c54;
@@ -107,9 +111,10 @@ a {
 }
 
 .welcome-message {
-  font-size: 18px;
+  font-size: 20px;
   color: #1c4c54;
   line-height: 20px;
+  margin-top: 20px;
 }
 
 #skills-h3 {
@@ -117,10 +122,10 @@ a {
   display: none;
 }
 
-.aqua {
+/*.aqua {
   background-color: #50b7c8;
 }
-
+*/
 .dark-text {
   color: #1c4c54;
 }
@@ -149,8 +154,8 @@ a {
 }
 
 /* TODO: Replace with image later */
-#header {
-  background-color: #50b7c8;
+#header, #lets-connect {
+  background-color: #599;
 }
 
 .flex-box {
@@ -237,5 +242,8 @@ span {
   #skills-h3,
   .biopic {
     display: block;
+  }
+  #skills {
+    flex-direction: column;
   }
 }
