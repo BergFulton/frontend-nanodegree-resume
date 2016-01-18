@@ -12,43 +12,42 @@ var bio = {
     "skills": [
         "HTML ", "CSS", "JavaScript", "digital strategy for cultural heritage", "project management","cat herding",
     ],
-    "bioPic": "images/headshot_crop.jpg",
-    "display": function() {
-        var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
-        $('#header').prepend(formattedRole);
+    "bioPic": "images/headshot_crop.jpg"
+}
+bio.display = function() {
+    var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
+    $('#header').prepend(formattedRole);
 
-        var formattedName = HTMLheaderName.replace("%data%", bio.name);
-        $('#header').prepend(formattedName);
+    var formattedName = HTMLheaderName.replace("%data%", bio.name);
+    $('#header').prepend(formattedName);
 
-        var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
-        $('#header').append(formattedWelcomeMessage);
+    var formattedWelcomeMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+    $('#header').append(formattedWelcomeMessage);
 
-        var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
-        $('#topContacts').append(formattedMobile);
-        $('#footerContacts').append(formattedMobile);
+    var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+    $('#topContacts').append(formattedMobile);
+    $('#footerContacts').append(formattedMobile);
 
-        var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
-        $('#topContacts').append(formattedEmail);
-        $('#footerContacts').append(formattedEmail);
+    var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+    $('#topContacts').append(formattedEmail);
+    $('#footerContacts').append(formattedEmail);
 
-        var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
-        $('#topContacts').append(formattedTwitter);
-        $('#footerContacts').append(formattedTwitter);
-
-
-        var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
-        $('#topContacts').append(formattedGitHub);
-        $('#footerContacts').append(formattedGitHub);
+    var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+    $('#topContacts').append(formattedTwitter);
+    $('#footerContacts').append(formattedTwitter);
 
 
-        var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
-        $('#topContacts').append(formattedLocation);
+    var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+    $('#topContacts').append(formattedGitHub);
+    $('#footerContacts').append(formattedGitHub);
 
-        var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
-        $("#header").append(formattedBioPic);
-    
-        }
-    }
+
+    var formattedLocation = HTMLlocation.replace("%data%", bio.contacts.location);
+    $('#topContacts').append(formattedLocation);
+
+    var formattedBioPic = HTMLbioPic.replace("%data%", bio.bioPic);
+    $("#header").append(formattedBioPic);
+}
 
 bio.display();
 
@@ -96,9 +95,11 @@ var work = {
         "location": "Norman, OK",
         "dates": "2010-2011",
         "description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
-    }],
-    "display": function () {
-        for (job in work.jobs) {
+    }]
+};
+
+work.display = function() {
+    for (job in work.jobs) {
         $("#workExperience").append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace("%data%", work.jobs[job].employer);
        
@@ -115,7 +116,6 @@ var work = {
        
         var formattedDescription = HTMLworkDescription.replace("%data%", work.jobs[job].description);
         $(".work-entry:last").append(formattedDescription);
-    }
     }
 }
 
@@ -146,30 +146,27 @@ var projects = {
         "dates": "2016",
         "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016.",
         "images": ["images/Running.jpg"]
-    }],
-    "display": function() {
-        for (project in projects.projects) {
+    }]
+};
+
+projects.display = function() {
+    for (project in projects.projects) {
         $("#projects").append(HTMLprojectStart);
 
-        var formattedTitle = HTMLprojectTitle.replace("%data%",
-            projects.projects[project].title);
+        var formattedTitle = HTMLprojectTitle.replace("%data%", projects.projects[project].title);
         $(".project-entry:last").append(formattedTitle);
 
-        var formattedDates = HTMLprojectDates.replace("%data%",
-            projects.projects[project].dates);
+        var formattedDates = HTMLprojectDates.replace("%data%", projects.projects[project].dates);
         $(".project-entry:last").append(formattedDates);
 
-        var formattedDescription = HTMLprojectDescription.replace("%data%",
-            projects.projects[project].description);
+        var formattedDescription = HTMLprojectDescription.replace("%data%", projects.projects[project].description);
         $(".project-entry:last").append(formattedDescription);
 
         if (projects.projects[project].images.length > 0)
             for (image in projects.projects[project].images)
-                var formattedImage = HTMLprojectImage.replace("%data%",
-                    projects.projects[project].images[image]);
-        $(".project-entry:last").append(formattedImage);
-        }
-    }
+                var formattedImage = HTMLprojectImage.replace("%data%", projects.projects[project].images[image]);
+                $(".project-entry:last").append(formattedImage);
+        }   
 }
 projects.display();
 
@@ -199,9 +196,11 @@ var speaking = {
         "dates": "December 2012",
         "topic": "The World Needs to See This!; Registrars and Social Media",
         "location": "Edinburgh, Scotland"
-    }],
-    "display": function() {
-        for (conf in speaking.conf) {
+    }]
+};
+
+speaking.display = function() {
+    for (conf in speaking.conf) {
         $("#speaking").append(HTMLspeakingStart);
         
         var formattedName = HTMLspeakingName.replace("%data%", speaking.conf[conf].name);
@@ -210,19 +209,15 @@ var speaking = {
         var formattedLocation = HTMLspeakingLocation.replace("%data%", speaking.conf[conf].location);
         $(".speaking-entry:last").append(formattedLocation);
 
-
         var formattedDates = HTMLspeakingDates.replace("%data%", speaking.conf[conf].dates);
         $(".speaking-entry:last").append(formattedDates);
 
-
         var formattedTopic = HTMLspeakingTopic.replace("%data%", speaking.conf[conf].topic);
         $(".speaking-entry:last").append(formattedTopic);
-
-       }
     }
-};
-speaking.display();
+}
 
+speaking.display();
 
 var education = {
     "schools": [{
@@ -306,7 +301,6 @@ function displayOnlineEducation() {
 }
 
 displayOnlineEducation();
-
 
 
 function inName(name) {
