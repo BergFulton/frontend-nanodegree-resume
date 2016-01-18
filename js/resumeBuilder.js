@@ -18,7 +18,7 @@ var bio = {
         "cat herding"
     ],
     "bioPic": "images/headshot_crop.jpg"
-}
+};
 
 bio.display = function() {
     var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
@@ -51,11 +51,11 @@ bio.display = function() {
 
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
     $('#header').append(formattedBioPic);
-}
+};
 
 bio.display();
 
-function printSkills(){
+function printSkills() {
     $('#header').append(HTMLskillsStart);
 
     for (var i = 0; i < bio.skills.length; i += 1) {
@@ -103,10 +103,10 @@ var work = {
 };
 
 work.display = function() {
-    for (job in work.jobs) {
+    for (var job in work.jobs) {
         $('#workExperience').append(HTMLworkStart);
         var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
-       
+
         var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
 
         var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
@@ -117,11 +117,11 @@ work.display = function() {
 
         var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
         $('.work-entry:last').append(formattedDates);
-       
+
         var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
         $('.work-entry:last').append(formattedDescription);
     }
-}
+};
 
 work.display();
 
@@ -131,14 +131,14 @@ $(document).click(function(loc) {
     var y = loc.pageY;
 
     logClicks(x, y);
-})
+});
 
 
 var projects = {
     "projects": [{
         "title": "#MuseumSwearJar",
         "dates": "2015-present",
-        "description":"<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overloard for change.",
+        "description": "<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overloard for change.",
         "images": ["images/SwearJar.jpg"]
     }, {
         "title": "Pittsburgh Punk Archive",
@@ -154,7 +154,7 @@ var projects = {
 };
 
 projects.display = function() {
-    for (project in projects.projects) {
+    for (var project in projects.projects) {
         $('#projects').append(HTMLprojectStart);
 
         var formattedTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
@@ -167,11 +167,12 @@ projects.display = function() {
         $('.project-entry:last').append(formattedDescription);
 
         if (projects.projects[project].images.length > 0)
-            for (image in projects.projects[project].images)
+            for (var image in projects.projects[project].images)
                 var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
-                $('.project-entry:last').append(formattedImage);
-        }   
-}
+        $('.project-entry:last').append(formattedImage);
+    }
+};
+
 projects.display();
 
 var speaking = {
@@ -204,9 +205,9 @@ var speaking = {
 };
 
 speaking.display = function() {
-    for (conf in speaking.conf) {
+    for (var conf in speaking.conf) {
         $('#speaking').append(HTMLspeakingStart);
-        
+
         var formattedName = HTMLspeakingName.replace('%data%', speaking.conf[conf].name);
         $('.speaking-entry:last').append(formattedName);
 
@@ -219,7 +220,7 @@ speaking.display = function() {
         var formattedTopic = HTMLspeakingTopic.replace('%data%', speaking.conf[conf].topic);
         $('.speaking-entry:last').append(formattedTopic);
     }
-}
+};
 
 speaking.display();
 
@@ -259,10 +260,10 @@ var education = {
         "dates": "2015",
         "url": "https://teamtreehouse.com/library/javascript-basics"
     }]
-}
+};
 
-education.display = function () {
-    for (school in education.schools) {
+education.display = function() {
+    for (var school in education.schools) {
         $('#education').append(HTMLschoolStart);
 
         var formattedName = HTMLschoolName.replace('%data%', education.schools[school].name);
@@ -285,7 +286,7 @@ education.display();
 
 function displayOnlineEducation() {
     $('#education').append(HTMLonlineClasses);
-    for (course in education.onlineCourses) {
+    for (var course in education.onlineCourses) {
         $('#education').append(HTMLschoolStart);
 
         var formattedTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[course].title);
@@ -302,7 +303,6 @@ function displayOnlineEducation() {
 }
 
 displayOnlineEducation();
-
 
 function inName(name) {
     name = bio.name.trim().split(" ");
