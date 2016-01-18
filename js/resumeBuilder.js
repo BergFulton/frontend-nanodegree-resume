@@ -140,7 +140,7 @@ var projects = {
     "projects": [{
         "title": "#MuseumSwearJar",
         "dates": "2015-present",
-        "description": "<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overloard for change.",
+        "description": "<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overlord for change.",
         "images": ["images/SwearJar.jpg"]
     }, {
         "title": "Pittsburgh Punk Archive",
