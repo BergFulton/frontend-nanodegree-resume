@@ -10,7 +10,7 @@ var bio = {
         "location": "Pittsburgh, PA"
     },
     "skills": [
-        "Social Media",
+        "social media",
         "HTML",
         "CSS",
         "JavaScript",
@@ -247,6 +247,13 @@ var education = {
         "degree": "BA, magna cum laude with honors",
         "major": ["Art", " Journalism"],
         "dates": "2007"
+    }, {
+        "name": "Irish|American Scholars Exchange",
+        "location": "Belfast, Northern Ireland",
+        "degree": "Independent study abroad",
+        "major": "Honors thesis research and writing",
+        "dates": "2006"
+
     }],
     "onlineCourses": [{
         "title": "Front End Web Development NanoDegree",
