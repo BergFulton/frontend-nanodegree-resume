@@ -192,7 +192,7 @@ var speaking = {
     }, {
         "name": "European Registrars Conference",
         "dates": "June 8-10, 2014",
-        "topic": "Registrars of the Future",
+        "topic": "We Were Promised Jetpacks",
         "location": "Helsinki, Finland"
     }, {
         "name": "European Registrars Conference",
@@ -259,9 +259,11 @@ var education = {
         "school": "TeamTreehouse",
         "dates": "2015",
         "url": "https://teamtreehouse.com/library/javascript-basics"
-    }],
-    "display": function(){
-        for (school in education.schools) {
+    }]
+}
+
+education.display = function () {
+    for (school in education.schools) {
         $("#education").append(HTMLschoolStart);
 
         var formattedName = HTMLschoolName.replace("%data%", education.schools[school].name);
@@ -277,11 +279,8 @@ var education = {
 
         var formattedMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
         $(".education-entry:last").append(formattedMajor);
-
-
-        }
     }
-}
+};
 
 education.display();
 
