@@ -31,6 +31,20 @@ p {
   padding: 0 5%;
 }
 
+.project-link {
+  display: inline-block;
+}
+
+.contact-link {
+  color: #ffffff;
+  display: inline;
+}
+
+.contact-link:hover,
+.contact-link:focus {
+  text-decoration: underline;
+}
+
 h1 {
   font-size: 40px;
   color: #1c4c54;

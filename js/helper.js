@@ -18,8 +18,8 @@ var HTMLheaderRole = '<div class="dark-text highlight-text">%data%</div><hr>';
 var HTMLcontactGeneric = '<li class="flex-item"><span class="dark-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="dark-text">mobile</span><span class="white-text">%data%</span></li>';
 var HTMLemail = '<li class="flex-item"><span class="dark-text">email</span><span class="white-text">%data%</span></li>';
-var HTMLtwitter = '<li class="flex-item"><span class="dark-text">twitter</span><span class="white-text">%data%</span></li>';
-var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><span class="white-text">%data%</span></li>';
+var HTMLtwitter = '<li class="flex-item"><span class="dark-text">twitter</span><span class="white-text"><a class="contact-link" href="%url%">%data%</a></span></li>';
+var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><span class="white-text"><a class="contact-link" href="%url%">%data%</a></span></li>';
 var HTMLblog = '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>';
 var HTMLlocation = '<li class="flex-item"><span class="dark-text">location</span><span class="white-text">%data%</span></li>';
 
@@ -88,7 +88,7 @@ function logClicks(x,y) {
       y: y
     }
   );
-  // console.log('x location: ' + x + '; y location: ' + y);
+  console.log('x location: ' + x + '; y location: ' + y);
 }
 
 $(document).click(function(loc) {

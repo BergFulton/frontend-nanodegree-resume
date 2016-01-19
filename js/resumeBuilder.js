@@ -5,8 +5,14 @@ var bio = {
     "contacts": {
         "mobile": "412-443-2654",
         "email": "traceybergfulton@gmail.com",
-        "github": "BergFulton",
-        "twitter": "@BergFulton",
+        "github": {
+            "username": "BergFulton",
+            "url": "http://github.com/bergfulton"
+        },
+        "twitter": {
+            "username": "@BergFulton",
+            "url": "http://twitter.com/bergfulton"
+        },
         "location": "Pittsburgh, PA"
     },
     "skills": [
@@ -38,11 +44,11 @@ bio.display = function() {
     $('#topContacts').append(formattedEmail);
     $('#footerContacts').append(formattedEmail);
 
-    var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter);
+    var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter.username).replace('%url%', bio.contacts.twitter.url);
     $('#topContacts').append(formattedTwitter);
     $('#footerContacts').append(formattedTwitter);
 
-    var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github);
+    var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github.username).replace('%url%', bio.contacts.github.url);
     $('#topContacts').append(formattedGitHub);
     $('#footerContacts').append(formattedGitHub);
 
@@ -140,7 +146,7 @@ var projects = {
     "projects": [{
         "title": "#MuseumSwearJar",
         "dates": "2015-present",
-        "description": "<a href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overlord for change.",
+        "description": "<a class=\"project-link\" href='http://www.twitter.com/MuseumSwearJar'>The Museum Swear Jar</a> is the museum industry's cathartic outlet, soon to be a benevolent overloard for change.",
         "images": ["images/SwearJar.jpg"]
     }, {
         "title": "Pittsburgh Punk Archive",
