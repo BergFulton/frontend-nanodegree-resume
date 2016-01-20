@@ -151,12 +151,12 @@ var projects = {
     }, {
         "title": "Pittsburgh Punk Archive",
         "dates": "2015-present",
-        "description": "Building a community driven online archive of the Pittsburgh punk scene.",
-        "images": ["images/BetterOffDead_MonacaVFW.jpg", "images/PeachPitt_basement.jpg"]
+        "description": "Building a community driven online archive of the Pittsburgh punk scene. Built using Omeka, HTML, CSS, and little bit of hope.",
+        "images": ["images/PeachPitt_basement.jpg"]
     }, {
         "title": "1000 Mile Challenge",
         "dates": "2016",
-        "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016.",
+        "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016. There will be hills, blisters, and a marathon for good measure. Why? Because it's there.",
         "images": ["images/Running.jpg"]
     }]
 };
@@ -326,15 +326,6 @@ education.display = function() {
 
 education.display();
 
-function inName(name) {
-    name = bio.name.trim().split(" ");
-    console.log(name);
-    name[1] = name[1].toUpperCase();
-    name[0] = name[0].slice(0, 1).toUpperCase() +
-        name[0].slice(1).toLowerCase();
-
-    return name[0] + " " + name[1];
-}
 
 $('#main').append(internationalizeButton);
 

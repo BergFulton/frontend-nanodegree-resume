@@ -43,6 +43,7 @@ p {
 .contact-link:hover,
 .contact-link:focus {
   text-decoration: underline;
+  color: #fff;
 }
 
 h1 {
