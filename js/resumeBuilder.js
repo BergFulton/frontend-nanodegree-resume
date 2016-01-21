@@ -80,7 +80,7 @@ var work = {
         "title": "Provenance Researcher and Collections Database Associate",
         "location": "Pittsburgh, PA",
         "dates": "July 2014-present",
-        "description": "Provenance researcher and data lead for the Art Tracks project."
+        "description": "Provenance researcher and data lead for the <a class=\"project-link\" href='http://blog.cmoa.org/category/series/art-tracks/'>Art Tracks project."
     }, {
         "employer": "Shoefitr",
         "title": "Data Manager",
