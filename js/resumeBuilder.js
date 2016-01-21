@@ -57,22 +57,16 @@ bio.display = function() {
 
     var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
     $('#header').append(formattedBioPic);
-};
 
-bio.display();
-
-function printSkills() {
-    $('#header').append(HTMLskillsStart);
-
-    for (var i = 0; i < bio.skills.length; i += 1) {
-
-        var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
-        $('#skills').append(formattedSkill);
+    function printSkills() {
+        $('#header').append(HTMLskillsStart);
+        for (var i = 0; i < bio.skills.length; i += 1) {
+            var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
+            $('#skills').append(formattedSkill);
+        }
     }
-}
-
-printSkills();
-
+    printSkills();
+};
 
 var work = {
     "jobs": [{
@@ -131,17 +125,6 @@ work.display = function() {
     }
 };
 
-work.display();
-
-
-$(document).click(function(loc) {
-    var x = loc.pageX;
-    var y = loc.pageY;
-
-    logClicks(x, y);
-});
-
-
 var projects = {
     "projects": [{
         "title": "#MuseumSwearJar",
@@ -185,8 +168,6 @@ projects.display = function() {
         }
     }
 };
-
-projects.display();
 
 var speaking = {
     "conf": [{
@@ -236,8 +217,6 @@ speaking.display = function() {
         }
     }
 };
-
-speaking.display();
 
 var education = {
     "schools": [{
@@ -324,10 +303,18 @@ education.display = function() {
     }
 };
 
-education.display();
-
-
-$('#main').append(internationalizeButton);
-
 //adding the Google map
 $('#mapDiv').append(googleMap);
+
+$(document).click(function(loc) {
+    var x = loc.pageX;
+    var y = loc.pageY;
+
+    logClicks(x, y);
+});
+
+bio.display();
+work.display();
+projects.display();
+speaking.display();
+education.display();
