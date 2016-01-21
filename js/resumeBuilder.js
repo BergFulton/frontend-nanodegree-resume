@@ -23,49 +23,48 @@ var bio = {
         "digital strategy",
         "cat herding"
     ],
-    "bioPic": "images/headshot_crop.jpg"
-};
+    "bioPic": "images/headshot_crop.jpg",
+    "display": function() {
+        var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
+        $('#header').prepend(formattedRole);
 
-bio.display = function() {
-    var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
-    $('#header').prepend(formattedRole);
+        var formattedName = HTMLheaderName.replace('%data%', bio.name);
+        $('#header').prepend(formattedName);
 
-    var formattedName = HTMLheaderName.replace('%data%', bio.name);
-    $('#header').prepend(formattedName);
+        var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
+        $('#header').append(formattedWelcomeMessage);
 
-    var formattedWelcomeMessage = HTMLwelcomeMsg.replace('%data%', bio.welcomeMessage);
-    $('#header').append(formattedWelcomeMessage);
+        var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
+        $('#topContacts').append(formattedMobile);
+        $('#footerContacts').append(formattedMobile);
 
-    var formattedMobile = HTMLmobile.replace('%data%', bio.contacts.mobile);
-    $('#topContacts').append(formattedMobile);
-    $('#footerContacts').append(formattedMobile);
+        var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+        $('#topContacts').append(formattedEmail);
+        $('#footerContacts').append(formattedEmail);
 
-    var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
-    $('#topContacts').append(formattedEmail);
-    $('#footerContacts').append(formattedEmail);
+        var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter.username).replace('%url%', bio.contacts.twitter.url);
+        $('#topContacts').append(formattedTwitter);
+        $('#footerContacts').append(formattedTwitter);
 
-    var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter.username).replace('%url%', bio.contacts.twitter.url);
-    $('#topContacts').append(formattedTwitter);
-    $('#footerContacts').append(formattedTwitter);
+        var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github.username).replace('%url%', bio.contacts.github.url);
+        $('#topContacts').append(formattedGitHub);
+        $('#footerContacts').append(formattedGitHub);
 
-    var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github.username).replace('%url%', bio.contacts.github.url);
-    $('#topContacts').append(formattedGitHub);
-    $('#footerContacts').append(formattedGitHub);
+        var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
+        $('#topContacts').append(formattedLocation);
 
-    var formattedLocation = HTMLlocation.replace('%data%', bio.contacts.location);
-    $('#topContacts').append(formattedLocation);
+        var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
+        $('#header').append(formattedBioPic);
 
-    var formattedBioPic = HTMLbioPic.replace('%data%', bio.bioPic);
-    $('#header').append(formattedBioPic);
-
-    function printSkills() {
-        $('#header').append(HTMLskillsStart);
-        for (var i = 0; i < bio.skills.length; i += 1) {
-            var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
-            $('#skills').append(formattedSkill);
+        function printSkills() {
+            $('#header').append(HTMLskillsStart);
+            for (var i = 0; i < bio.skills.length; i += 1) {
+                var formattedSkill = HTMLskills.replace('%data%', bio.skills[i]);
+                $('#skills').append(formattedSkill);
+            }
         }
+        printSkills();
     }
-    printSkills();
 };
 
 var work = {
