@@ -24,6 +24,10 @@ var bio = {
         "cat herding"
     ],
     "bioPic": "images/headshot_crop.jpg",
+    // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
+    // https://discussions.udacity.com/t/json-and-display-function/26209
+    // http://stackoverflow.com/questions/2001449/is-it-valid-to-define-functions-in-json-results
+    // I previously did this in an alternative manner w/valid JSON - see this commit: https://github.com/BergFulton/frontend-nanodegree-resume/commit/b80f12872c174f53f85d6674f8dc1939dafe7cc4
     "display": function() {
         var formattedRole = HTMLheaderRole.replace('%data%', bio.role);
         $('#header').prepend(formattedRole);
@@ -98,28 +102,31 @@ var work = {
         "location": "Norman, OK",
         "dates": "2010-2011",
         "description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
-    }]
-};
+    }],
+    // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
+    // https://discussions.udacity.com/t/json-and-display-function/26209
+    // http://stackoverflow.com/questions/2001449/is-it-valid-to-define-functions-in-json-results
+    // I previously did this in an alternative manner w/valid JSON - see this commit: https://github.com/BergFulton/frontend-nanodegree-resume/commit/b80f12872c174f53f85d6674f8dc1939dafe7cc4
+    "display": function() {
+        for (var i = 0; i < work.jobs.length; i++) {
+            if (work.jobs.hasOwnProperty(i)) {
+                $('#workExperience').append(HTMLworkStart);
+                var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[i].employer);
 
-work.display = function() {
-    for (var job in work.jobs) {
-        if (work.jobs.hasOwnProperty(job)) {
-            $('#workExperience').append(HTMLworkStart);
-            var formattedEmployer = HTMLworkEmployer.replace('%data%', work.jobs[job].employer);
+                var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[i].title);
 
-            var formattedTitle = HTMLworkTitle.replace('%data%', work.jobs[job].title);
+                var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[i].location);
+                $('.work-entry:last').append(formattedLocation);
 
-            var formattedLocation = HTMLworkLocation.replace('%data%', work.jobs[job].location);
-            $('.work-entry:last').append(formattedLocation);
+                var formattedEmployerTitle = formattedEmployer + formattedTitle;
+                $('.work-entry:last').append(formattedEmployerTitle);
 
-            var formattedEmployerTitle = formattedEmployer + formattedTitle;
-            $('.work-entry:last').append(formattedEmployerTitle);
+                var formattedDates = HTMLworkDates.replace('%data%', work.jobs[i].dates);
+                $('.work-entry:last').append(formattedDates);
 
-            var formattedDates = HTMLworkDates.replace('%data%', work.jobs[job].dates);
-            $('.work-entry:last').append(formattedDates);
-
-            var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[job].description);
-            $('.work-entry:last').append(formattedDescription);
+                var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[i].description);
+                $('.work-entry:last').append(formattedDescription);
+            }
         }
     }
 };
@@ -140,30 +147,33 @@ var projects = {
         "dates": "2016",
         "description": "I'm attempting to run 1,000 miles (1,609 k) in 2016. There will be hills, blisters, and a marathon for good measure. Why? Because it's there.",
         "images": ["images/Running.jpg"]
-    }]
-};
+    }],
+    // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
+    // https://discussions.udacity.com/t/json-and-display-function/26209
+    // http://stackoverflow.com/questions/2001449/is-it-valid-to-define-functions-in-json-results
+    // I previously did this in an alternative manner w/valid JSON - see this commit: https://github.com/BergFulton/frontend-nanodegree-resume/commit/b80f12872c174f53f85d6674f8dc1939dafe7cc4
+    "display": function() {
+        for (var i = 0; i < projects.projects.length; i++) {
+            if (projects.projects.hasOwnProperty(i)) {
+                $('#projects').append(HTMLprojectStart);
 
-projects.display = function() {
-    for (var project in projects.projects) {
-        if (projects.projects.hasOwnProperty(project)) {
-            $('#projects').append(HTMLprojectStart);
+                var formattedTitle = HTMLprojectTitle.replace('%data%', projects.projects[i].title);
+                $('.project-entry:last').append(formattedTitle);
 
-            var formattedTitle = HTMLprojectTitle.replace('%data%', projects.projects[project].title);
-            $('.project-entry:last').append(formattedTitle);
+                var formattedDates = HTMLprojectDates.replace('%data%', projects.projects[i].dates);
+                $('.project-entry:last').append(formattedDates);
 
-            var formattedDates = HTMLprojectDates.replace('%data%', projects.projects[project].dates);
-            $('.project-entry:last').append(formattedDates);
+                var formattedDescription = HTMLprojectDescription.replace('%data%', projects.projects[i].description);
+                $('.project-entry:last').append(formattedDescription);
 
-            var formattedDescription = HTMLprojectDescription.replace('%data%', projects.projects[project].description);
-            $('.project-entry:last').append(formattedDescription);
-
-            if (projects.projects[project].images.length > 0)
-                for (var image in projects.projects[project].images) {
-                    if (projects.projects.hasOwnProperty(image)) {
-                        var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[project].images[image]);
-                        $('.project-entry:last').append(formattedImage);
+                if (projects.projects[i].images.length > 0)
+                    for (var image in projects.projects[i].images) {
+                        if (projects.projects.hasOwnProperty(image)) {
+                            var formattedImage = HTMLprojectImage.replace('%data%', projects.projects[i].images[image]);
+                            $('.project-entry:last').append(formattedImage);
+                        }
                     }
-                }
+            }
         }
     }
 };
@@ -194,25 +204,28 @@ var speaking = {
         "dates": "December 2012",
         "topic": "The World Needs to See This!; Registrars and Social Media",
         "location": "Edinburgh, Scotland"
-    }]
-};
+    }],
+    // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
+    // https://discussions.udacity.com/t/json-and-display-function/26209
+    // http://stackoverflow.com/questions/2001449/is-it-valid-to-define-functions-in-json-results
+    // I previously did this in an alternative manner w/valid JSON - see this commit: https://github.com/BergFulton/frontend-nanodegree-resume/commit/b80f12872c174f53f85d6674f8dc1939dafe7cc4
+    "display": function() {
+        for (var i = 0; i < speaking.conf.length; i++) {
+            if (speaking.conf.hasOwnProperty(i)) {
+                $('#speaking').append(HTMLspeakingStart);
 
-speaking.display = function() {
-    for (var conf in speaking.conf) {
-        if (speaking.conf.hasOwnProperty(conf)) {
-            $('#speaking').append(HTMLspeakingStart);
+                var formattedName = HTMLspeakingName.replace('%data%', speaking.conf[i].name);
+                $('.speaking-entry:last').append(formattedName);
 
-            var formattedName = HTMLspeakingName.replace('%data%', speaking.conf[conf].name);
-            $('.speaking-entry:last').append(formattedName);
+                var formattedLocation = HTMLspeakingLocation.replace('%data%', speaking.conf[i].location);
+                $('.speaking-entry:last').append(formattedLocation);
 
-            var formattedLocation = HTMLspeakingLocation.replace('%data%', speaking.conf[conf].location);
-            $('.speaking-entry:last').append(formattedLocation);
+                var formattedDates = HTMLspeakingDates.replace('%data%', speaking.conf[i].dates);
+                $('.speaking-entry:last').append(formattedDates);
 
-            var formattedDates = HTMLspeakingDates.replace('%data%', speaking.conf[conf].dates);
-            $('.speaking-entry:last').append(formattedDates);
-
-            var formattedTopic = HTMLspeakingTopic.replace('%data%', speaking.conf[conf].topic);
-            $('.speaking-entry:last').append(formattedTopic);
+                var formattedTopic = HTMLspeakingTopic.replace('%data%', speaking.conf[i].topic);
+                $('.speaking-entry:last').append(formattedTopic);
+            }
         }
     }
 };
@@ -259,45 +272,47 @@ var education = {
         "school": "TeamTreehouse",
         "dates": "2015",
         "url": "https://teamtreehouse.com/library/javascript-basics"
-    }]
-};
+    }],
+    // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
+    // https://discussions.udacity.com/t/json-and-display-function/26209
+    // http://stackoverflow.com/questions/2001449/is-it-valid-to-define-functions-in-json-results
+    // I previously did this in an alternative manner w/valid JSON - see this commit: https://github.com/BergFulton/frontend-nanodegree-resume/commit/b80f12872c174f53f85d6674f8dc1939dafe7cc4
+    "display": function() {
+        for (var i = 0; i < education.schools.length; i++) {
+            if (education.schools.hasOwnProperty(i)) {
+                $('#education').append(HTMLschoolStart);
 
-education.display = function() {
-    for (var school in education.schools) {
-        if (education.schools.hasOwnProperty(school)) {
-            $('#education').append(HTMLschoolStart);
+                var formattedName = HTMLschoolName.replace('%data%', education.schools[i].name);
+                var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
 
-            var formattedName = HTMLschoolName.replace('%data%', education.schools[school].name);
-            var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[school].degree);
+                $('.education-entry:last').append(formattedName + formattedDegree);
 
-            $('.education-entry:last').append(formattedName + formattedDegree);
+                var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[i].location);
+                $('.education-entry:last').append(formattedLocation);
 
-            var formattedLocation = HTMLschoolLocation.replace('%data%', education.schools[school].location);
-            $('.education-entry:last').append(formattedLocation);
+                var formattedDates = HTMLschoolDates.replace('%data%', education.schools[i].dates);
+                $('.education-entry:last').append(formattedDates);
 
-            var formattedDates = HTMLschoolDates.replace('%data%', education.schools[school].dates);
-            $('.education-entry:last').append(formattedDates);
-
-            var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[school].major);
-            $('.education-entry:last').append(formattedMajor);
+                var formattedMajor = HTMLschoolMajor.replace('%data%', education.schools[i].major);
+                $('.education-entry:last').append(formattedMajor);
+            }
         }
-    }
 
-    $('#education').append(HTMLonlineClasses);
+        $('#education').append(HTMLonlineClasses);
+        for (var j = 0; j < education.onlineCourses.length; j++) {
+            if (education.onlineCourses.hasOwnProperty(j)) {
+                $('#education').append(HTMLschoolStart);
 
-    for (var course in education.onlineCourses) {
-        if (education.onlineCourses.hasOwnProperty(course)) {
-            $('#education').append(HTMLschoolStart);
+                var formattedTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[j].title);
+                var formattedSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[j].school);
+                $('.education-entry:last').append(formattedTitle + formattedSchool);
 
-            var formattedTitle = HTMLonlineTitle.replace('%data%', education.onlineCourses[course].title);
-            var formattedSchool = HTMLonlineSchool.replace('%data%', education.onlineCourses[course].school);
-            $('.education-entry:last').append(formattedTitle + formattedSchool);
+                var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[j].dates);
+                $('.education-entry:last').append(formattedOnlineDates);
 
-            var formattedDates = HTMLonlineDates.replace('%data%', education.onlineCourses[course].dates);
-            $('.education-entry:last').append(formattedDates);
-
-            var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[course].url);
-            $('.education-entry:last').append(formattedUrl);
+                var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[j].url);
+                $('.education-entry:last').append(formattedUrl);
+            }
         }
     }
 };
