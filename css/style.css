@@ -35,6 +35,10 @@ p {
   display: inline-block;
 }
 
+.external-link {
+  display: block;
+}
+
 .contact-link {
   color: #ffffff;
   display: inline;

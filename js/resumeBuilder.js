@@ -77,29 +77,34 @@ var work = {
         "title": "Provenance Researcher and Collections Database Associate",
         "location": "Pittsburgh, PA",
         "dates": "July 2014-present",
+        "url": "http://www.cmoa.org",
         "description": "Provenance researcher and data lead for the <a class=\"project-link\" href='http://blog.cmoa.org/category/series/art-tracks/'>Art Tracks project."
     }, {
         "employer": "Shoefitr",
         "title": "Data Manager",
         "location": "Pittsburgh, PA",
+        "url": "http://www.shoefitr.com",
         "dates": "July 2013-July 2014",
         "description": "Managed data intake, data quality, and supervised team of 10."
     }, {
         "employer": "August Wilson Center for African American Culture",
         "title": "Registrar and Collections Specialist",
         "location": "Pittsburgh, PA",
+        "url": "http://culturaldistrict.org/pages/aacc",
         "dates": "2012-July 2013",
         "description": "Responsible for all collections activity, loans, exhibitions, and inventory."
     }, {
         "employer": "BergFulton, LLC",
         "title": "Contract Registrar",
         "location": "Pittsburgh, PA",
+        "url": "http://traceybergfulton.com",
         "dates": "2011-2012",
         "description": "Collections management, arts management, and exhibition work for a variety of private clients and organizations."
     }, {
         "employer": "Fred Jones Jr. Art Museum, University of Oklahoma",
         "title": "Assistant Registrar",
         "location": "Norman, OK",
+        "url": "http://www.ou.edu/fjjma.html",
         "dates": "2010-2011",
         "description": "Assist with all aspects of art collection stewardship, opening of new wing, and intake of new collection."
     }],
@@ -126,6 +131,8 @@ var work = {
 
                 var formattedDescription = HTMLworkDescription.replace('%data%', work.jobs[i].description);
                 $('.work-entry:last').append(formattedDescription);
+
+                var formattedUrl = $('.work-entry .employer-link').attr('href', work.jobs[i].url);
             }
         }
     }
