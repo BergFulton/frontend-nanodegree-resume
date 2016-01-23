@@ -241,28 +241,26 @@ var speaking = {
 
 var education = {
     'schools': [{
-        'name': 'University of Glasgow|http://www.gla.ac.uk',
+        'name': 'University of Glasgow',
         'location': 'Glasgow, Scotland',
         'degree': 'MLitt, with Merit',
-        'major': 'Decorative Arts and Design History',
+        'major': ['Decorative Arts and Design History'],
         'dates': '2008',
         'url': 'http://www.gla.ac.uk'
-
     }, {
-        'name': 'Otterbein College|http://www.otterbein.edu',
+        'name': 'Otterbein College',
         'location': 'Westerville, OH',
         'degree': 'BA, magna cum laude with honors',
         'major': ['Art', ' Journalism'],
-        'dates': '2007', 
+        'dates': '2007',
         'url': 'http://www.otterbein.edu'
     }, {
         'name': 'Irish|American Scholars Exchange',
         'location': 'Belfast, Northern Ireland',
         'degree': 'Independent study abroad',
-        'major': 'Honors thesis research and writing',
-        'dates': '2006'
+        'major': ['Honors thesis research and writing'],
+        'dates': '2006',
         'url': 'http://www.otterbein.edu' //yes, this is the right URL. There is no specifc link.
-
     }],
     'onlineCourses': [{
         'title': 'Front End Web Development NanoDegree',
@@ -294,9 +292,7 @@ var education = {
             if (education.schools.hasOwnProperty(i)) {
                 $('#education').append(HTMLschoolStart);
 
-                var schoolLink = education.schools[i].name.split('|');
-
-                var formattedName = HTMLschoolName.replace('%data%', schoolLink[0]).replace('%url%', schoolLink[1]);
+                var formattedName = HTMLschoolName.replace('%data%', education.schools[i].name).replace('%url%', education.schools[i].url);
                 var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
 
                 $('.education-entry:last').append(formattedName + formattedDegree);
