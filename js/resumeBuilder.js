@@ -4,7 +4,7 @@ var bio = {
     "welcomeMessage": "Cuppa tea and a chat?",
     "contacts": {
         "mobile": "412-443-2654",
-        "email": "traceybergfulton@gmail.com",
+        "email": "traceybergfulton@gmail.com|mailto:traceybergfulton@gmail.com",
         "github": "BergFulton|http://www.github.com/bergfulton",
         "twitter": "@BergFulton|http://www.twitter.com/bergfulton",
         "location": "Pittsburgh, PA"
@@ -36,18 +36,20 @@ var bio = {
         $('#topContacts').append(formattedMobile);
         $('#footerContacts').append(formattedMobile);
 
-        var formattedEmail = HTMLemail.replace('%data%', bio.contacts.email);
+        var emailInfo = bio.contacts.email.split('|');
+
+        var formattedEmail = HTMLemail.replace('%data%', emailInfo[0]).replace('%url%', emailInfo[1]);
         $('#topContacts').append(formattedEmail);
         $('#footerContacts').append(formattedEmail);
 
-        var twitterInfo = bio.contacts.twitter.split("|");
+        var twitterInfo = bio.contacts.twitter.split('|');
         //Adding active links to Twitter handle in header/footer. 
 
         var formattedTwitter = HTMLtwitter.replace('%data%', twitterInfo[0]).replace('%url%', twitterInfo[1]);
         $('#topContacts').append(formattedTwitter);
         $('#footerContacts').append(formattedTwitter);
 
-        var githubInfo = bio.contacts.github.split("|");
+        var githubInfo = bio.contacts.github.split('|');
         //Adding active links to GitHub handle in header/footer.
 
         var formattedGitHub = HTMLgithub.replace('%data%', githubInfo[0]).replace('%url%', githubInfo[1]);
@@ -239,14 +241,14 @@ var speaking = {
 
 var education = {
     "schools": [{
-        "name": "University of Glasgow",
+        "name": "University of Glasgow|http://www.gla.ac.uk",
         "location": "Glasgow, Scotland",
         "degree": "MLitt, with Merit",
         "major": "Decorative Arts and Design History",
         "dates": "2008"
 
     }, {
-        "name": "Otterbein College",
+        "name": "Otterbein College|http://www.otterbein.edu",
         "location": "Westerville, OH",
         "degree": "BA, magna cum laude with honors",
         "major": ["Art", " Journalism"],
@@ -289,7 +291,9 @@ var education = {
             if (education.schools.hasOwnProperty(i)) {
                 $('#education').append(HTMLschoolStart);
 
-                var formattedName = HTMLschoolName.replace('%data%', education.schools[i].name);
+                var schoolLink = education.schools[i].name.split('|');
+
+                var formattedName = HTMLschoolName.replace('%data%', schoolLink[0]).replace('%url%', schoolLink[1]);
                 var formattedDegree = HTMLschoolDegree.replace('%data%', education.schools[i].degree);
 
                 $('.education-entry:last').append(formattedName + formattedDegree);
@@ -317,7 +321,7 @@ var education = {
                 var formattedOnlineDates = HTMLonlineDates.replace('%data%', education.onlineCourses[j].dates);
                 $('.education-entry:last').append(formattedOnlineDates);
 
-                var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[j].url);
+                var formattedUrl = HTMLonlineURL.replace('%data%', education.onlineCourses[j].url).replace('%url%', education.onlineCourses[j].url);
                 $('.education-entry:last').append(formattedUrl);
             }
         }

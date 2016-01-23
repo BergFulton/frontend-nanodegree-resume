@@ -17,7 +17,7 @@ var HTMLheaderRole = '<div class="dark-text highlight-text">%data%</div><hr>';
 
 var HTMLcontactGeneric = '<li class="flex-item"><span class="dark-text">%contact%</span><span class="white-text">%data%</span></li>';
 var HTMLmobile = '<li class="flex-item"><span class="dark-text">mobile</span><span class="white-text">%data%</span></li>';
-var HTMLemail = '<li class="flex-item"><span class="dark-text">email</span><span class="white-text">%data%</span></li>';
+var HTMLemail = '<li class="flex-item"><span class="dark-text">email</span><span class="white-text"><a class="contact-link" href="%url%">%data%</a></span></li>';
 var HTMLtwitter = '<li class="flex-item"><span class="dark-text">twitter</span><span class="white-text"><a class="contact-link" href="%url%">%data%</a></span></li>';
 var HTMLgithub = '<li class="flex-item"><span class="dark-text">github</span><span class="white-text"><a class="contact-link" href="%url%">%data%</a></span></li>';
 var HTMLblog = '<li class="flex-item"><span class="dark-text">blog</span><span class="white-text">%data%</span></li>';
@@ -43,7 +43,7 @@ var HTMLprojectDescription = '<p><br>%data%</p>';
 var HTMLprojectImage = '<img src="%data%">';
 
 var HTMLschoolStart = '<div class="education-entry"></div>';
-var HTMLschoolName = '<a href="#">%data%';
+var HTMLschoolName = '<a href="%url%">%data%';
 var HTMLschoolDegree = ' -- %data%</a>';
 var HTMLschoolDates = '<div class="date-text">%data%</div>';
 var HTMLschoolLocation = '<div class="location-text">%data%</div>';
@@ -53,7 +53,7 @@ var HTMLonlineClasses = '<h3>Online Classes</h3>';
 var HTMLonlineTitle = '<a href="#">%data%';
 var HTMLonlineSchool = ' - %data%</a>';
 var HTMLonlineDates = '<div class="date-text">%data%</div>';
-var HTMLonlineURL = '<br><a class="dark-link" href="#">%data%</a>';
+var HTMLonlineURL = '<br><a class="dark-link" href="%url%">%data%</a>';
 
 var HTMLspeakingStart = '<div class="speaking-entry"></div>';
 var HTMLspeakingName = '<a href="#">%data%';
