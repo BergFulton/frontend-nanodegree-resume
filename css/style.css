@@ -6,7 +6,7 @@ h5,
 h6 {
     padding: 0;
     margin: 0;
-    font-family: 'Vast Shadow', cursive;
+    font-family: "Vast Shadow", cursive;
     text-transform: uppercase;
 }
 body,
@@ -16,7 +16,7 @@ li,
 p {
     padding: 0;
     margin: 0;
-    font-family: 'Playfair Display', serif;
+    font-family: "Playfair Display", serif;
 }
 .clear-fix {
     overflow: auto;
@@ -34,7 +34,7 @@ p {
     display: block;
 }
 .contact-link {
-    color: #ffffff;
+    color: #fff;
     display: inline;
 }
 .contact-link:hover,
@@ -164,7 +164,7 @@ ul {
     border-radius: 50%;
 }
 .biopic:hover {
-    content: url('../images/helmet_crop.jpg');
+    content: url("../images/helmet_crop.jpg");
     border-radius: 50%;
 }
 img {
