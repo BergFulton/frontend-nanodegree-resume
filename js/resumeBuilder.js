@@ -245,20 +245,23 @@ var education = {
         'location': 'Glasgow, Scotland',
         'degree': 'MLitt, with Merit',
         'major': 'Decorative Arts and Design History',
-        'dates': '2008'
+        'dates': '2008',
+        'url': 'http://www.gla.ac.uk'
 
     }, {
         'name': 'Otterbein College|http://www.otterbein.edu',
         'location': 'Westerville, OH',
         'degree': 'BA, magna cum laude with honors',
         'major': ['Art', ' Journalism'],
-        'dates': '2007'
+        'dates': '2007', 
+        'url': 'http://www.otterbein.edu'
     }, {
         'name': 'Irish|American Scholars Exchange',
         'location': 'Belfast, Northern Ireland',
         'degree': 'Independent study abroad',
         'major': 'Honors thesis research and writing',
         'dates': '2006'
+        'url': 'http://www.otterbein.edu' //yes, this is the right URL. There is no specifc link.
 
     }],
     'onlineCourses': [{
