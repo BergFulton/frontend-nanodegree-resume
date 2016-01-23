@@ -5,14 +5,8 @@ var bio = {
     "contacts": {
         "mobile": "412-443-2654",
         "email": "traceybergfulton@gmail.com",
-        "github": {
-            "username": "BergFulton",
-            "url": "http://github.com/bergfulton"
-        },
-        "twitter": {
-            "username": "@BergFulton",
-            "url": "http://twitter.com/bergfulton"
-        },
+        "github": "BergFulton|http://www.github.com/bergfulton",
+        "twitter": "@BergFulton|http://www.twitter.com/bergfulton",
         "location": "Pittsburgh, PA"
     },
     "skills": [
@@ -46,11 +40,17 @@ var bio = {
         $('#topContacts').append(formattedEmail);
         $('#footerContacts').append(formattedEmail);
 
-        var formattedTwitter = HTMLtwitter.replace('%data%', bio.contacts.twitter.username).replace('%url%', bio.contacts.twitter.url);
+        var twitterInfo = bio.contacts.twitter.split("|");
+        //Adding active links to Twitter handle in header/footer. 
+
+        var formattedTwitter = HTMLtwitter.replace('%data%', twitterInfo[0]).replace('%url%', twitterInfo[1]);
         $('#topContacts').append(formattedTwitter);
         $('#footerContacts').append(formattedTwitter);
 
-        var formattedGitHub = HTMLgithub.replace('%data%', bio.contacts.github.username).replace('%url%', bio.contacts.github.url);
+        var githubInfo = bio.contacts.github.split("|");
+        //Adding active links to GitHub handle in header/footer.
+
+        var formattedGitHub = HTMLgithub.replace('%data%', githubInfo[0]).replace('%url%', githubInfo[1]);
         $('#topContacts').append(formattedGitHub);
         $('#footerContacts').append(formattedGitHub);
 
@@ -189,7 +189,7 @@ var speaking = {
     "conf": [{
         "name": "ARCS Conf",
         "dates": "November 12-15, 2015",
-        "topic": "Be Excellent to Each Other",
+        "topic": "You've got your Social Media in my Collections Data!",
         "location": "New Orleans, LA"
     }, {
         "name": "Museum Computer Network",
@@ -209,7 +209,7 @@ var speaking = {
     }, {
         "name": "European Registrars Conference",
         "dates": "December 2012",
-        "topic": "The World Needs to See This!; Registrars and Social Media",
+        "topic": "The World Needs to See This!; Making your objects tweet, buzz, and go viral",
         "location": "Edinburgh, Scotland"
     }],
     // including display function within the object declaration, despite JSLint not validating it (unless the function is all on one line)
